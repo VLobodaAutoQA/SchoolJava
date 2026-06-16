@@ -1,4 +1,4 @@
-package ru.alfabank.lesson8;
+package ru.alfabank.edu.lesson8;
 
 import java.util.ArrayList;
 
