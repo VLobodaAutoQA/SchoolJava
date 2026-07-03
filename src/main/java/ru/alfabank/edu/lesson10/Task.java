@@ -30,4 +30,16 @@ public class Task {
             System.out.println("[ ] " + nameTask);
         }
     }
+
+    public void setNameTask(String nameTask) {
+        this.nameTask = nameTask;
+    }
+
+    public boolean isDone() {
+        return isDone;
+    }
+
+    public void setDone(boolean done) {
+        isDone = done;
+    }
 }
