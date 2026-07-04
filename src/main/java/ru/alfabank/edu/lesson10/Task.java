@@ -13,33 +13,21 @@ public class Task {
     }
 
     // получить статус - выполнена задача или нет
-    public boolean getStatusTask() {
+    public boolean getStatus() {
         return isDone;
     }
 
     // получить название задачи
-    public String getNameTask() {
+    public String getName() {
         return nameTask;
     }
 
     // вывести информацию о задаче
-    public void printInfoTask() {
+    public void printInfo() {
         if (isDone) {
             System.out.println("[x] " + nameTask);
         } else {
             System.out.println("[ ] " + nameTask);
         }
-    }
-
-    public void setNameTask(String nameTask) {
-        this.nameTask = nameTask;
-    }
-
-    public boolean isDone() {
-        return isDone;
-    }
-
-    public void setDone(boolean done) {
-        isDone = done;
     }
 }

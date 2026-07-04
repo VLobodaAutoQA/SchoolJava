@@ -1,11 +1,9 @@
 package ru.alfabank.edu.lesson10;
 
-import net.datafaker.idnumbers.SouthAfricanIdNumber;
-
 import java.util.ArrayList;
 
 public class TaskTracker {
-    public ArrayList<Task> tasks = new ArrayList<>();
+    private ArrayList<Task> tasks = new ArrayList<>();
 
     // добавить новую задачу в список
     public void addTask(String nameTask) {
@@ -20,10 +18,8 @@ public class TaskTracker {
             System.out.println("Список задач пуст!");
             System.out.println();
         }
-
-        System.out.println("=== Список задач ===");
         for (Task task : tasks) {
-            task.printInfoTask();
+            task.printInfo();
         }
         System.out.println();
 
@@ -32,12 +28,9 @@ public class TaskTracker {
     // пометить задачу как сделанную (на базе переданного имени задачи)
     public void markTaskAsDone(String nameTask) {
         for (Task task : tasks) {
-            if (!tasks.contains(task)) {
-                System.out.println("Задача с названием: " + nameTask + " не найдена!");
-            }
-            else {
-                task.isDone();
-                System.out.println("Задача: " + nameTask + " отмечена как выполненная!");
+            if (task.getName().equalsIgnoreCase(nameTask)) {
+                task.markAsDone();
+                System.out.println("Задача: /" + nameTask + "/ отмечена как выполненная!");
             }
         }
     }
@@ -45,8 +38,9 @@ public class TaskTracker {
     // получить статус задачи по переданному названию (выполнена или нет)
     public boolean getStatusTask(String nameTask) {
         for (Task task : tasks) {
-            if (task.getNameTask().equalsIgnoreCase(nameTask)) {
-                return task.isDone();
+            if (task.getName().equalsIgnoreCase(nameTask)) {
+                System.out.println("Статус у задачи: /" + nameTask + "/ Выполнена");
+                return task.getStatus();
             }
         }
         System.out.println("Задача с названием: " + nameTask + " не найдена!");
@@ -54,13 +48,13 @@ public class TaskTracker {
     }
 
     // вывести статистику по задачам. вывод в формате: Всего задач: 3 Выполнено: 1 Открыто: 2
-    public void getStatisticsTasks() {
+    public void printStatistics() {
         int totalTasks = tasks.size();
         int doneTasks = 0;
         int openTasks = 0;
 
         for (Task task : tasks) {
-            if (task.isDone()) {
+            if (task.getStatus()) {
                 doneTasks++;
             } else {
                 openTasks++;
