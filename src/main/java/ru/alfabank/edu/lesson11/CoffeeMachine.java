@@ -18,7 +18,7 @@ public class CoffeeMachine {
         if (nameCoffe == null) {
             throw new NullPointerException("Ошибка: название кофе отсутствует");
         }
-        String uppercaseNameCoffe = nameCoffe.toUpperCase();
-        System.out.println("Название кофе большими буквами: " + uppercaseNameCoffe);
+        String uppercaseNameCoffee = nameCoffe.toUpperCase();
+        System.out.println("Название кофе большими буквами: " + uppercaseNameCoffee);
     }
 }
