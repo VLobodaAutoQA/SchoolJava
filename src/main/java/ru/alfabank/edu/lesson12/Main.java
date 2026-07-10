@@ -15,7 +15,6 @@ public class Main {
         System.out.println("=== 1. успешная сдача багажа ===");
         try {
             BaggageTicket ticket = baggageDropDesk.dropBaggage("Ivan Petrov", "SU-123", 18);
-            System.out.println("Успех! Бирка создана:");
             System.out.println("Пассажир: " + ticket.getNamePassenger());
             System.out.println("Номер рейса: " + ticket.getFlightNumber());
             System.out.println("Вес багажа: " + ticket.getBaggageWeight());
