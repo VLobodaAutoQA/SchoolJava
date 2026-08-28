@@ -1,4 +1,4 @@
-package ru.alfabank.lesson14_2;
+package ru.alfabank.edu.lesson14.lesson14_2;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
